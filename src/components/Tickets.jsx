@@ -1,19 +1,22 @@
 import React, { use, useState } from 'react';
 import TicketCard from './TicketCard';
 import Dashboard from './Dashboard';
+import Swal from 'sweetalert2';
 
 const Tickets = ({ ticketsPromise }) => {
     // Reading the promise data
     const ticketsData = use(ticketsPromise);
     const tickets = ticketsData || [];
 
-    // State for the lists
+    // State for the lists. We will also maintain counts for the dashboard.
     const [activeTasks, setActiveTasks] = useState([]);
     const [resolvedTasks, setResolvedTasks] = useState([]);
 
+    // Initialize counts based on the initial ticket data
     const inProgressCount = tickets.filter(ticket => ticket.status === 'In-Progress').length;
     const resolvedCount = tickets.filter(ticket => ticket.status === 'Resolved').length;
 
+    // We can initialize the counts based on the initial data, but they will be updated as tasks are added/moved.
     const [activeTasksCount, setActiveTasksCount] = useState(inProgressCount);
     const [resolvedTasksCount, setResolvedTasksCount] = useState(resolvedCount);
 
@@ -23,6 +26,14 @@ const Tickets = ({ ticketsPromise }) => {
         if (!alreadyExists) {
             setActiveTasks((prev) => [...prev, ticket]);
             setActiveTasksCount((prev) => prev + 1);
+
+            // Trigger the alert here!
+            Swal.fire({
+                title: 'Task Added!',
+                text: `Ticket #${ticket.ticketId} has been added to active tasks.`,
+                icon: 'success',
+                confirmButtonColor: '#10b981', // Matches your green card
+            });
         }
     };
 
@@ -34,13 +45,21 @@ const Tickets = ({ ticketsPromise }) => {
             setResolvedTasks((prev) => [taskToResolve, ...prev]);
             setActiveTasksCount((prev) => prev - 1);
             setResolvedTasksCount((prev) => prev + 1);
+
+            // Trigger the alert here!
+            Swal.fire({
+                title: 'Task Resolved!',
+                text: `Ticket #${ticketId} has been moved to resolved.`,
+                icon: 'success',
+                confirmButtonColor: '#10b981', // Matches your green card
+            });
         }
     };
 
     return (
         <div className="max-w-7xl mx-auto p-6 bg-slate-50 min-h-screen">
 
-            {/* 1. Dashboard now receives the LIVE state arrays */}
+            {/* Dashboard now receives the LIVE counts */}
             <Dashboard
                 activeTasks={activeTasksCount}
                 resolvedTasks={resolvedTasksCount}
