@@ -20,7 +20,7 @@ const Dashboard = ({ ticketsPromise }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
 
             <div className="relative overflow-hidden w-full h-40 rounded-2xl bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-700 shadow-xl flex flex-col items-center justify-center text-white transition-transform hover:scale-[1.02]">
-                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/')]"></div>
 
                 <div className="relative z-10 flex flex-col items-center">
                     <h2 className="text-lg font-medium tracking-wide opacity-90 uppercase">In-Progress</h2>
