@@ -1,17 +1,17 @@
 import React, { use } from 'react';
 
-const Dashboard = ({ ticketsPromise }) => {
+const Dashboard = ({ activeTasks, resolvedTasks }) => {
 
-    const ticketsData = use(ticketsPromise);
-    const tickets = ticketsData || [];
+    // const ticketsData = use(ticketsPromise);
+    // const tickets = ticketsData || [];
 
     // console.log('Dashboard tickets:', tickets);
 
-    const inProgressCount = tickets.filter(ticket => ticket.status === 'In-Progress').length;
-    const resolvedCount = tickets.filter(ticket => ticket.status === 'Resolved').length;
+    // const inProgressCount = tickets.filter(ticket => ticket.status === 'In-Progress').length;
+    // const resolvedCount = tickets.filter(ticket => ticket.status === 'Resolved').length;
 
-    console.log('In-Progress Count:', inProgressCount);
-    console.log('Resolved Count:', resolvedCount);
+    console.log('Active Tasks:', activeTasks);
+    console.log('Resolved Tasks:', resolvedTasks);
 
 
 
@@ -24,7 +24,7 @@ const Dashboard = ({ ticketsPromise }) => {
 
                 <div className="relative z-10 flex flex-col items-center">
                     <h2 className="text-lg font-medium tracking-wide opacity-90 uppercase">In-Progress</h2>
-                    <p className="text-6xl font-bold mt-1 tabular-nums">{inProgressCount}</p>
+                    <p className="text-6xl font-bold mt-1 tabular-nums">{activeTasks}</p>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@ const Dashboard = ({ ticketsPromise }) => {
 
                 <div className="relative z-10 flex flex-col items-center">
                     <h2 className="text-lg font-medium tracking-wide opacity-90 uppercase">Resolved</h2>
-                    <p className="text-6xl font-bold mt-1 tabular-nums">{resolvedCount}</p>
+                    <p className="text-6xl font-bold mt-1 tabular-nums">{resolvedTasks}</p>
                 </div>
             </div>
 

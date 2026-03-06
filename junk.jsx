@@ -11,18 +11,11 @@ const Tickets = ({ ticketsPromise }) => {
     const [activeTasks, setActiveTasks] = useState([]);
     const [resolvedTasks, setResolvedTasks] = useState([]);
 
-    const inProgressCount = tickets.filter(ticket => ticket.status === 'In-Progress').length;
-    const resolvedCount = tickets.filter(ticket => ticket.status === 'Resolved').length;
-
-    const [activeTasksCount, setActiveTasksCount] = useState(inProgressCount);
-    const [resolvedTasksCount, setResolvedTasksCount] = useState(resolvedCount);
-
     // Logic: Add ticket to "Task Status" (Sidebar)
     const handleSelectTicket = (ticket) => {
         const alreadyExists = [...activeTasks, ...resolvedTasks].find(t => t.id === ticket.id);
         if (!alreadyExists) {
             setActiveTasks((prev) => [...prev, ticket]);
-            setActiveTasksCount((prev) => prev + 1);
         }
     };
 
@@ -32,8 +25,6 @@ const Tickets = ({ ticketsPromise }) => {
         if (taskToResolve) {
             setActiveTasks((prev) => prev.filter(t => t.id !== ticketId));
             setResolvedTasks((prev) => [taskToResolve, ...prev]);
-            setActiveTasksCount((prev) => prev - 1);
-            setResolvedTasksCount((prev) => prev + 1);
         }
     };
 
@@ -42,8 +33,8 @@ const Tickets = ({ ticketsPromise }) => {
 
             {/* 1. Dashboard now receives the LIVE state arrays */}
             <Dashboard
-                activeTasks={activeTasksCount}
-                resolvedTasks={resolvedTasksCount}
+                activeTasks={activeTasks}
+                resolvedTasks={resolvedTasks}
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">

@@ -15,7 +15,8 @@ function App() {
   return (
     <>
       <Navbar />
-      <Dashboard ticketsPromise={ticketsPromise} />
+
+      {/* <Dashboard ticketsPromise={ticketsPromise} /> */}
 
       <Suspense fallback={<h2>Loading...</h2>}>
         <Tickets ticketsPromise={ticketsPromise} />
