@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1011,
+        "title": "API Rate Limit Exceeded",
+        "description": "Developer reporting constant 429 errors even though they are well within their tier limits.",
+        "customer": "Alex Rivera",
+        "priority": "HIGH PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-01-25"
+    },
+    {
+        "id": 1012,
+        "title": "Dark Mode Contrast Issues",
+        "description": "Accessibility feedback: the text on the dashboard is unreadable when Dark Mode is enabled.",
+        "customer": "Jordan Lee",
+        "priority": "LOW PRIORITY",
+        "status": "In-Progress",
+        "createdAt": "2024-01-26"
+    },
+    {
+        "id": 1013,
+        "title": "Export to CSV Failing",
+        "description": "When trying to export the monthly report, the app hangs and eventually returns a 504 Gateway Timeout.",
+        "customer": "Morgan Chase",
+        "priority": "MEDIUM PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-01-26"
+    },
+    {
+        "id": 1014,
+        "title": "Bulk User Upload Error",
+        "description": "Attempting to upload a CSV with 50+ users fails with an 'Unexpected Token' error message.",
+        "customer": "Taylor Swift",
+        "priority": "HIGH PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-01-27"
+    },
+    {
+        "id": 1015,
+        "title": "Incorrect Currency on Invoice",
+        "description": "Customer is located in the UK but their latest invoice #9942 was generated in USD instead of GBP.",
+        "customer": "Marcus Thorne",
+        "priority": "MEDIUM PRIORITY",
+        "status": "In-Progress",
+        "createdAt": "2024-01-27"
+    },
+    {
+        "id": 1016,
+        "title": "Password Reset Link Expired",
+        "description": "The 'Forgot Password' link sent via email expires in under 2 minutes, which is too fast for the user.",
+        "customer": "Elena Rodriguez",
+        "priority": "LOW PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-01-28"
+    },
+    {
+        "id": 1017,
+        "title": "Database Connection Timeout",
+        "description": "Intermittent connectivity issues reported on the US-East server cluster during peak hours.",
+        "customer": "System Alert",
+        "priority": "HIGH PRIORITY",
+        "status": "In-Progress",
+        "createdAt": "2024-01-28"
+    },
+    {
+        "id": 1018,
+        "title": "Update Notification Preferences",
+        "description": "User wants to disable marketing emails but the 'Save' button in settings is grayed out.",
+        "customer": "Chris P. Bacon",
+        "priority": "LOW PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-01-29"
+    },
+    {
+        "id": 1019,
+        "title": "Broken Link in Documentation",
+        "description": "The 'Getting Started' guide has a dead link pointing to a non-existent Github repository.",
+        "customer": "Sam Sneed",
+        "priority": "LOW PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-01-29"
+    },
+    {
+        "id": 1020,
+        "title": "Duplicate Charges on Account",
+        "description": "Customer was billed twice for the same 'Pro' subscription in the month of January.",
+        "customer": "Linda Hamilton",
+        "priority": "HIGH PRIORITY",
+        "status": "In-Progress",
+        "createdAt": "2024-01-30"
+    },
+    {
+        "id": 1021,
+        "title": "Slow Dashboard Load Times",
+        "description": "Analytics dashboard taking over 10 seconds to render charts for users with large datasets.",
+        "customer": "Robert Pattinson",
+        "priority": "MEDIUM PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-01-30"
+    },
+    {
+        "id": 1022,
+        "title": "Integration with Slack Failing",
+        "description": "The Slack webhook is not posting notifications even though the test connection succeeds.",
+        "customer": "Peter Parker",
+        "priority": "MEDIUM PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-01-31"
+    },
+    {
+        "id": 1023,
+        "title": "Requested Feature: PDF Annotations",
+        "description": "The design team would like the ability to leave comments directly on uploaded PDF proofs.",
+        "customer": "Gwen Stacy",
+        "priority": "LOW PRIORITY",
+        "status": "In-Progress",
+        "createdAt": "2024-01-31"
+    },
+    {
+        "id": 1024,
+        "title": "Missing MFA Recovery Codes",
+        "description": "Customer lost their phone and does not have their recovery codes to bypass 2FA.",
+        "customer": "Bruce Wayne",
+        "priority": "HIGH PRIORITY",
+        "status": "Open",
+        "createdAt": "2024-02-01"
+    },
+    {
+        "id": 1025,
+        "title": "Welcome Email Not Received",
+        "description": "New signups are reporting that they aren't receiving the mandatory verification email.",
+        "customer": "Clark Kent",
+        "priority": "HIGH PRIORITY",
+        "status": "In-Progress",
+        "createdAt": "2024-02-01"
+    }
+]
