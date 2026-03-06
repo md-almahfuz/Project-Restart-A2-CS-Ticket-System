@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { use } from 'react';
 
-const Dashboard = () => {
+const Dashboard = ({ ticketsPromise }) => {
+
+    const ticketsData = use(ticketsPromise);
+    const tickets = ticketsData || [];
+
+    // console.log('Dashboard tickets:', tickets);
+
+    const inProgressCount = tickets.filter(ticket => ticket.status === 'In-Progress').length;
+    const resolvedCount = tickets.filter(ticket => ticket.status === 'Resolved').length;
+
+    console.log('In-Progress Count:', inProgressCount);
+    console.log('Resolved Count:', resolvedCount);
+
+
+
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
 
@@ -9,7 +24,7 @@ const Dashboard = () => {
 
                 <div className="relative z-10 flex flex-col items-center">
                     <h2 className="text-lg font-medium tracking-wide opacity-90 uppercase">In-Progress</h2>
-                    <p className="text-6xl font-bold mt-1 tabular-nums">4</p>
+                    <p className="text-6xl font-bold mt-1 tabular-nums">{inProgressCount}</p>
                 </div>
             </div>
 
@@ -18,7 +33,7 @@ const Dashboard = () => {
 
                 <div className="relative z-10 flex flex-col items-center">
                     <h2 className="text-lg font-medium tracking-wide opacity-90 uppercase">Resolved</h2>
-                    <p className="text-6xl font-bold mt-1 tabular-nums">0</p>
+                    <p className="text-6xl font-bold mt-1 tabular-nums">{resolvedCount}</p>
                 </div>
             </div>
 
