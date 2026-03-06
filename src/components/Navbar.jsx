@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaPlus } from 'react-icons/fa';
 
 const Navbar = () => {
     return (
@@ -22,7 +23,13 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">CS Ticket System</a>
+                <div className="flex items-center">
+                    {/* Logo Image */}
+                    <img src="/resources/logo.png" alt="Logo" className="h-20 w-auto" />
+
+                    {/* Your Text with btn-ghost padding removed */}
+                    <a className="btn btn-ghost text-xl px-2 min-h-0 h-auto">Ticket System</a>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -36,7 +43,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">New Ticket</a>
+                <button
+                    className="flex items-center gap-2 px-5 py-2 rounded-md bg-gradient-to-r from-violet-600 to-purple-500 text-white font-semibold shadow-md hover:shadow-lg hover:brightness-110 transition-all active:scale-95 text-sm"
+                // onClick={() => document.getElementById('new_ticket_modal').showModal()}
+                >
+                    <FaPlus size={12} className="opacity-90" />
+                    <span className="tracking-wide">New Ticket</span>
+                </button>
             </div>
         </div>
     );
