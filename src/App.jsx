@@ -24,10 +24,6 @@ function App() {
 
       <Footer></Footer>
 
-
-
-      <h1>CS Ticket System</h1>
-
     </>
   )
 }
