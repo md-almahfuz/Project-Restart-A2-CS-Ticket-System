@@ -17,21 +17,21 @@ const Dashboard = ({ activeTasks, resolvedTasks }) => {
 
                 {/* Left Vector */}
                 <div
-                    className="absolute inset-0 opacity-20 pointer-events-none bg-no-repeat"
+                    className="absolute inset-0 opacity-80 pointer-events-none bg-no-repeat"
                     style={{
                         backgroundImage: "url('/resources/vector1.png')",
-                        backgroundSize: '70%',
-                        backgroundPosition: 'left center'
+                        backgroundSize: '40%',
+                        backgroundPosition: 'left',
                     }}
                 ></div>
 
                 {/* Right Vector (Mirrored) */}
                 <div
-                    className="absolute inset-0 opacity-20 pointer-events-none bg-no-repeat"
+                    className="absolute inset-0 opacity-80 pointer-events-none bg-no-repeat"
                     style={{
                         backgroundImage: "url('/resources/vector1.png')",
-                        backgroundSize: '70%',
-                        backgroundPosition: 'right center',
+                        backgroundSize: '40%',
+                        backgroundPosition: 'left',
                         transform: 'scaleX(-1)' // This mirrors the image
                     }}
                 ></div>
@@ -45,17 +45,30 @@ const Dashboard = ({ activeTasks, resolvedTasks }) => {
 
 
 
-            {/* <div className="relative overflow-hidden w-full h-40 rounded-2xl bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-700 shadow-xl flex flex-col items-center justify-center text-white transition-transform hover:scale-[1.02]">
-                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/')]"></div>
 
-                <div className="relative z-10 flex flex-col items-center">
-                    <h2 className="text-lg font-medium tracking-wide opacity-90 uppercase">In-Progress</h2>
-                    <p className="text-6xl font-bold mt-1 tabular-nums">{activeTasks}</p>
-                </div>
-            </div> */}
 
             <div className="relative overflow-hidden w-full h-40 rounded-2xl bg-gradient-to-br from-[#4ade80] via-[#10b981] to-[#0d9488] shadow-xl flex flex-col items-center justify-center text-white transition-transform hover:scale-[1.02]">
-                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+
+                {/* Left Vector */}
+                <div
+                    className="absolute inset-0 opacity-80 pointer-events-none bg-no-repeat"
+                    style={{
+                        backgroundImage: "url('/resources/vector1.png')",
+                        backgroundSize: '40%',
+                        backgroundPosition: 'left'
+                    }}
+                ></div>
+
+                {/* Right Vector (Mirrored) */}
+                <div
+                    className="absolute inset-0 opacity-80 pointer-events-none bg-no-repeat"
+                    style={{
+                        backgroundImage: "url('/resources/vector1.png')",
+                        backgroundSize: '40%',
+                        backgroundPosition: 'left',
+                        transform: 'scaleX(-1)' // This mirrors the image
+                    }}
+                ></div>
 
                 <div className="relative z-10 flex flex-col items-center">
                     <h2 className="text-lg font-medium tracking-wide opacity-90 uppercase">Resolved</h2>
